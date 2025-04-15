@@ -1,0 +1,5 @@
+package swagLab_test;
+
+public class ProductTest extends BaseClass {
+
+}

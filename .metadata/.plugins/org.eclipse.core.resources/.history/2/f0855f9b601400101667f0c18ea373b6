@@ -1,0 +1,18 @@
+package swagLab_pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class LoginPage {
+	WebDriver driver;
+	public void LoginFunction(String UserNameVal, String PasswordVal) {
+		WebElement Username = driver.findElement(By.xpath("//input[@id='user-name']"));
+		WebElement Password = driver.findElement(By.xpath("//input[@id='password']"));
+		WebElement LoginButton = driver.findElement(By.xpath("//input[@id='login-button']"));
+
+		Username.sendKeys(UserNameVal);
+		Password.sendKeys(PasswordVal);
+		LoginButton.click();
+	}
+}

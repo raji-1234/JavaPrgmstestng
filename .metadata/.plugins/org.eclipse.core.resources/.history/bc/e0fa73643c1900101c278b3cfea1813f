@@ -1,0 +1,29 @@
+package swagLab_test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+import swagLab_pages.LoginPage;
+import swagLab_pages.ProductPage;
+
+public class ProductTest extends BaseClass {
+
+	@Test
+	public void AddToCardTest() throws Exception {
+		
+		LoginPage lp = new LoginPage();
+		lp.LoginFunction("standard_user", "secret_sauce");
+		
+		ProductPage pp = new ProductPage();
+		pp.AddToCart("Sauce Labs Bolt T-Shirt");
+		
+		
+		WebElement PageTitle = driver.findElement(By.xpath("//span[text()='Products']"));
+		Thread.sleep(5000);
+		Assert.assertEquals(PageTitle.getText(), "Products");
+		
+	}
+	
+}
